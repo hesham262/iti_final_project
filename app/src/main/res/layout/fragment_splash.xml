@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF7EC">
+
+
+    <ImageView
+        android:id="@+id/imgChef"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/splashimg"
+        android:contentDescription="Chef"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txtTitle"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="298dp"
+        android:layout_height="201dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="@string/txt_title"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/startContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgChef"
+        app:layout_constraintVertical_bias="0.1" />
+
+
+    <LinearLayout
+        android:id="@+id/startContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintVertical_bias="0.9">
+
+        <ImageView
+            android:id="@+id/startButtonImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/menu"
+            android:contentDescription="Start"
+            android:layout_marginHorizontal="16dp"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start cooking"
+            android:textColor="#6A957B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="16dp"/>
+        />
+
+        <ImageView
+            android:id="@+id/dotsImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/button"
+            android:contentDescription="Indicators"
+            android:layout_marginHorizontal="12dp"/>
+        />
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
