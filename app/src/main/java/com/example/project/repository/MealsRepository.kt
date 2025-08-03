@@ -17,5 +17,8 @@ class MealsRepository {
         api.searchMeals(query)
 
 
+    suspend fun getMealDetails(id: String) =
+        api.getMealDetails(id)
+
 
 }

@@ -10,7 +10,8 @@ import com.example.project.R
 import com.example.project.data.model.Meal
 
 class RecipeAdapter(
-    private var items: List<Meal>
+    private var items: List<Meal>,
+    private val onItemClick: (Meal) -> Unit
 ) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,7 +31,13 @@ class RecipeAdapter(
         Glide.with(holder.itemView)
             .load(meal.strMealThumb)
             .into(holder.imgMeal)
+
+        holder.itemView.setOnClickListener {
+            onItemClick(meal)
+        }
     }
+
+
 
     override fun getItemCount(): Int = items.size
 

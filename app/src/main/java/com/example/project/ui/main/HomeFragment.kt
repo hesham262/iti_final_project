@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.project.databinding.FragmentHomeBinding
 
@@ -32,7 +33,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = RecipeAdapter(emptyList())
+        adapter = RecipeAdapter(emptyList()){ meal ->
+
+            val action = HomeFragmentDirections.actionHomeFragmentToRecipeDetailFragment(meal.idMeal)
+            findNavController().navigate(action)
+        }
 
         binding.rvMeals.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvMeals.adapter = adapter
