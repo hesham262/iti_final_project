@@ -11,6 +11,9 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
     private val repository = MealsRepository()
 
 
@@ -22,6 +25,9 @@ class HomeViewModel : ViewModel() {
     }
 
     private fun loadMealsForAllLetters() {
+
+        _isLoading.value = true
+
         viewModelScope.launch {
             try {
                 val letters = ('a'..'z')
@@ -41,6 +47,9 @@ class HomeViewModel : ViewModel() {
             } catch (e: Exception) {
                 Log.e("API_TEST", "Error: ${e.message}", e)
             }
+        finally {
+            _isLoading.value = false
+        }
         }
     }
 }

@@ -15,31 +15,64 @@
         <ImageView
             android:id="@+id/imgMeal"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="260dp"
             android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
             android:transitionName="mealImage" />
 
 
-        <TextView
-            android:id="@+id/tvMealName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Meal Name"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvMealName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meal Name"
+                android:fontFamily="@font/main_font"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#6A957B" />
+
+            <ImageButton
+                android:id="@+id/btnFavorite"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/heart_outline"
+                android:contentDescription="Favorite"
+                app:tint="#6A957B" />
+
+            <ImageButton
+                android:id="@+id/btnWatchVideo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_favorite_button"
+                android:src="@drawable/video"
+                android:contentDescription="Watch Video"
+                android:scaleType="centerInside"
+                android:padding="8dp"
+                app:tint="#6A957B"  />
+
+        </LinearLayout>
 
 
-        <TextView
+       <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:text="Ingredients"
-            android:textSize="18sp"
+           android:fontFamily="@font/main_font"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black" />
-
+           android:textColor="#6A957B" />
 
         <TextView
             android:id="@+id/tvIngredients"
@@ -48,7 +81,10 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:text="Ingredients list"
-            android:textSize="16sp" />
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+
 
 
         <TextView
@@ -57,9 +93,10 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:text="Instructions"
-            android:textSize="18sp"
+            android:fontFamily="@font/main_font"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black" />
+            android:textColor="#6A957B" />
 
      
         <TextView
@@ -70,7 +107,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
             android:text="Instructions details"
-            android:textSize="16sp" />
+            android:textStyle="bold"
+            android:textSize="15sp" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
