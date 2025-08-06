@@ -48,9 +48,6 @@ class HomeFragment : Fragment() {
 
 
         adapter = RecipeAdapter(emptyList()){ meal ->
-
-
-
             val action = HomeFragmentDirections.actionHomeFragmentToRecipeDetailFragment(meal.idMeal)
             findNavController().navigate(action)
         }
@@ -60,7 +57,6 @@ class HomeFragment : Fragment() {
 
         viewModel.meals.observe(viewLifecycleOwner) { list ->
             adapter.updateData(list)
-
             val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_left)
             binding.rvMeals.startAnimation(animation)
         }

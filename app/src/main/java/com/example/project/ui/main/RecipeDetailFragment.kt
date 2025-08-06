@@ -25,7 +25,6 @@ class RecipeDetailFragment: Fragment() {
 
     private lateinit var favoritesViewModel: FavoritesViewModel
 
-    private var isFavorite = false
 
     override fun onCreateView(
         inflater: LayoutInflater,

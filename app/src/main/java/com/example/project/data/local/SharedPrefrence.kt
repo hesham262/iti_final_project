@@ -10,8 +10,8 @@ class SharedPrefrence(context: Context) {
             putString("email", email)
             putString("password", password)
             putBoolean("isLoggedIn", true)
-            apply()
-        }
+
+        }.commit()
     }
 
     fun isLoggedIn(): Boolean = sharedPref.getBoolean("isLoggedIn", false)
@@ -22,7 +22,5 @@ class SharedPrefrence(context: Context) {
         return email == savedEmail && password == savedPassword
     }
 
-    fun logout() {
-        sharedPref.edit().clear().apply()
-    }
+
 }

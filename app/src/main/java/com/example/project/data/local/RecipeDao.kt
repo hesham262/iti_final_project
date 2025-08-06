@@ -5,7 +5,7 @@ import androidx.room.*
 @Dao
 interface RecipeDao{
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     suspend fun insertMeal(meal: FavoriteRecipe)
 
     @Delete
@@ -14,6 +14,6 @@ interface RecipeDao{
     @Query("SELECT * FROM favorites")
     fun getAllFavorites(): LiveData<List<FavoriteRecipe>>
 
-    @Query("SELECT * FROM favorites WHERE id = :mealId LIMIT 1")
+    @Query("SELECT * FROM favorites WHERE id = :mealId ")
     suspend fun getMealById(mealId: String): FavoriteRecipe?
 }

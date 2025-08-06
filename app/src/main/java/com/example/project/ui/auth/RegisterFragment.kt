@@ -41,7 +41,7 @@ class RegisterFragment : Fragment() {
                     Toast.makeText(requireContext(), "Please enter your data", Toast.LENGTH_SHORT).show()
                 } else {
                     sharedPref.saveUser(email, password)
-                    findNavController().navigate(R.id.action_registerFragment_to_homeFragment)
+                    findNavController().navigate(R.id.action_registerFragment_to_loginFragment )
                 }
             }
 
